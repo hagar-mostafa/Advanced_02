@@ -92,6 +92,19 @@ public class Program
         PrintReport(Catalog, p =>
             Console.WriteLine($"[{p.Category}] {p.Name} | Price: ${p.Price} | Stock: {p.Stock}"));
 
+        //===================================== Task 3.2: Transform Product =====================================
+
+        Console.WriteLine("\n=== Summary List ===");
+        List<string> transform = TransformProducts(Catalog, p => $"{p.Name}  (${p.Price})");
+        foreach (var item in transform)
+            Console.WriteLine(item);
+
+        Console.WriteLine("\n=== Price Labels ===");
+        List<string> transform02 = TransformProducts(Catalog,
+          p => $"{p.Name} : {(p.Price > 100 ? "Expensive!" : "Affordable!")}" );
+        foreach (var item in transform02)
+            Console.WriteLine(item);
+
 
     }
     #region Comments
