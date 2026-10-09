@@ -120,8 +120,10 @@ public class Program
         //===================================== Task 3.3: Filter Products =====================================
 
         Console.WriteLine("\n=== Low-Stock Alert ===");
-        List<Product> lowStockProducts=(Catalog , p => p.stock)
-
+        List<Product> lowStockProducts = FilterProducts(Catalog, p => p.Stock < 20);
+        PrintReport(lowStockProducts,
+            p => Console.WriteLine($"[LOW STOCK] {p.Name}: only {20 - p.Stock} left!")
+            );
 
     }
     #region Comments
