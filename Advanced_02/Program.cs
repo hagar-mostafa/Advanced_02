@@ -34,6 +34,15 @@ public class Program
             Console.WriteLine($"{item.Name} - ${item.Price} - {{ Stock : {item.Stock} }}");
         }
     }
+    //================================ PrintReport =================================
+
+    public static void PrintReport(List<Product> products , Action<Product> action)
+    {
+        foreach (var item in products)
+        {
+            action(item);
+        }
+    }
     public static void Main()
     {
         // ==============================Task1=====================================
@@ -62,7 +71,20 @@ public class Program
         Print(Clothes);
         Console.WriteLine();
 
-    }
+        //===================================== Task 3.1: Print Reports=====================================
 
+        Console.WriteLine("\n=== Short Report ===");
+        PrintReport(Catalog, p => Console.WriteLine($"{p.Name} - ${p.Price}"));
+
+        Console.WriteLine("\n=== Detailed Report ===");
+        PrintReport(Catalog, p =>
+            Console.WriteLine($"[{p.Category}] {p.Name} | Price: ${p.Price} | Stock: {p.Stock}"));
+
+    }
+    #region Comments
+    /*
+     Func is a Delegate that return <T> type , used for return functions 
+    Action is a Delegate of void type that return nothing 
+     */
+    #endregion
 }
-   
