@@ -43,6 +43,18 @@ public class Program
             action(item);
         }
     }
+
+    //================================ Transform Products =================================
+    public static List <string>TransformProducts(List<Product> products, Func<Product , string> func)
+    {
+        List<string> result = new List<string> ();
+        foreach (var item in products)
+        {
+            result.Add(func(item));
+        }
+        return result;
+    }
+
     public static void Main()
     {
         // ==============================Task1=====================================
@@ -84,8 +96,13 @@ public class Program
     }
     #region Comments
     /*
-     Func is a Delegate that return <T> type , used for return functions 
+     Func is a Delegate that return <T> type , used for return functions
+
     Action is a Delegate of void type that return nothing 
+
+    note that func , action can take from 0 - 16 parameter
+
+    predicate is a Delegate that returns boolean and takes 1 parameter
      */
     #endregion
 }
