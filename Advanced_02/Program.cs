@@ -128,6 +128,7 @@ public class Program
     }
     #region Comments
     /*
+     * 
      Func is a Delegate that return <T> type , used for return functions
 
     Action is a Delegate of void type that return nothing 
