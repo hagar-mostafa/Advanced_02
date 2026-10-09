@@ -80,6 +80,7 @@ public class Program
         PrintReport(Catalog, p =>
             Console.WriteLine($"[{p.Category}] {p.Name} | Price: ${p.Price} | Stock: {p.Stock}"));
 
+
     }
     #region Comments
     /*
