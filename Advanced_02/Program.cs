@@ -43,6 +43,7 @@ public class Program
         Print(Electronics);
         Console.WriteLine();
 
+
         Console.WriteLine("================== Under $50===================");
         Console.WriteLine();
               var cheaper = SearchProducts(Catalog, p => p.Price < 50);
