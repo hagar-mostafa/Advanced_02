@@ -55,6 +55,18 @@ public class Program
         return result;
     }
 
+    //================================  Filter Products =================================
+
+    public static List<Product> FilterProducts(List<Product> products, Predicate<Product> predicate)
+    {
+        List<Product> result = new List<Product>();
+        foreach (var item in products)
+        {
+            if (predicate(item))
+                result.Add(item);
+        }
+        return result;
+    }
     public static void Main()
     {
         // ==============================Task1=====================================
@@ -104,6 +116,11 @@ public class Program
           p => $"{p.Name} : {(p.Price > 100 ? "Expensive!" : "Affordable!")}" );
         foreach (var item in transform02)
             Console.WriteLine(item);
+
+        //===================================== Task 3.3: Filter Products =====================================
+
+        Console.WriteLine("\n=== Low-Stock Alert ===");
+        List<Product> lowStockProducts=(Catalog , p => p.stock)
 
 
     }
